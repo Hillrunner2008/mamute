@@ -5,7 +5,6 @@
 <%@attribute name="redirectUrl" type="java.lang.String" required="false" %>
 
 <form class="validated-form user-form" action="${linkTo[AuthController].login}" method="POST">
-	<tags:socialLoginMethods buttonContent="auth"/>
 
 	<c:set var="extraClass" value="${env.supports('feature.auth.db')? 'email' : ''}" />
 	<c:set var="type" value="${env.supports('feature.auth.db')? 'email' : 'text'}" />

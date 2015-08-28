@@ -7,7 +7,6 @@
 
 <c:if test="${env.supports('feature.signup')}">
 	<form action="${linkTo[SignupController].signup}" method="POST" class="validated-form user-form">
-		<tags:socialLoginMethods buttonContent="signup"/>
 
 		<label for="name">${t['signup.form.username.label']}</label>
 		<input id="name" type="text" name="name" class="required text-input" maxlength="100" value="${name}"/>
