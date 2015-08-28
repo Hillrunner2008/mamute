@@ -17,9 +17,6 @@
 			<div class="about-text">
 				${t['about.home_banner.text'].args(siteName)}
 			</div>
-			<a href="${linkTo[NavigationController].about}">
-				${t['about.home_banner.text.link'].args(siteName)}
-			</a>
 		</div>
 		<div class="about-content how-it-works">
 			<ul>
