@@ -13,7 +13,7 @@
 </h2>
 
 <form action="${linkTo[AntiHackController].showSuspects}" method="post">
-	<label>Início</label>
+	<label>Inï¿½cio</label>
 	<input type="text" class="date datepicker text-input" name="begin">
 	<label>Fim</label>
 	<input type="text" class="date datepicker text-input" name="end">
