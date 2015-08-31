@@ -4,6 +4,6 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 
 <c:forEach var="question" items="${questions}">
-	<tags:questionListItem simple="true" question="${question}"/>
+    <tags:questionListItem simple="true" question="${question}"/>
 </c:forEach>
 <a href="/search?query=${query}">${t['show_more']}</a>

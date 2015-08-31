@@ -5,14 +5,14 @@ import org.mamute.model.User;
 
 public interface RssContent {
 
-	User getAuthor();
+    User getAuthor();
 
-	String getTitle();
+    String getTitle();
 
-	Long getId();
+    Long getId();
 
-	DateTime getCreatedAt();
+    DateTime getCreatedAt();
 
-	String getLinkPath();
-	
+    String getLinkPath();
+
 }

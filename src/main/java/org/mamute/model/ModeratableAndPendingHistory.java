@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-
 import org.mamute.model.interfaces.Moderatable;
 
 public class ModeratableAndPendingHistory {
@@ -16,9 +15,9 @@ public class ModeratableAndPendingHistory {
         ModeratableComparator comparator = new ModeratableComparator();
         informationsByModeratable = new TreeMap<>(comparator);
         for (Object[] moderatableAndInformation : questionAndInformations) {
-            Moderatable moderatable = (Moderatable) moderatableAndInformation[0]; 
+            Moderatable moderatable = (Moderatable) moderatableAndInformation[0];
             Information questionInformation = (Information) moderatableAndInformation[1];
-            
+
             List<Information> informations = informationsByModeratable.get(moderatable);
             if (informations == null) {
                 informations = new ArrayList<>();
@@ -27,11 +26,11 @@ public class ModeratableAndPendingHistory {
             informationsByModeratable.put(moderatable, informations);
         }
     }
-    
+
     public List<Moderatable> moderatables() {
         return new ArrayList<Moderatable>(informationsByModeratable.keySet());
     }
-    
+
     public Set<Entry<Moderatable, List<Information>>> getEntrySet() {
         return informationsByModeratable.entrySet();
     }

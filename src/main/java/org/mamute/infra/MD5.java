@@ -4,11 +4,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MD5 {
+
     /**
      * Encodes a string
-     * 
-     * @param str
-     *            String to encode
+     *
+     * @param str String to encode
      * @return Encoded String
      */
     public static String crypt(String str) {

@@ -7,5 +7,5 @@
 <h2 class="title big-text-title">${t['signup.terms.title']}</h2>
 
 <div class="big-text">
-	<tags:brutal-include value="terms"/>
+    <tags:brutal-include value="terms"/>
 </div>

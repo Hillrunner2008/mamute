@@ -10,7 +10,7 @@
 
 <c:set var="title" value="${t['menu.unsolved']}"/>
 <section class="first-content content">
-	<tags:questionList recentTags="${recentTags}" questions="${questions}" title="${title}"/>
+    <tags:questionList recentTags="${recentTags}" questions="${questions}" title="${title}"/>
 </section>
 <tags:sideBar recentTags="${recentTags}" />
 <tags:joyrideIntro />

@@ -1,7 +1,8 @@
 package org.mamute.controllers;
 
+import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import javax.inject.Inject;
-
 import org.mamute.auth.GoogleAPI;
 import org.mamute.auth.SocialAPI;
 import org.mamute.model.MethodType;
@@ -11,35 +12,36 @@ import org.scribe.model.Token;
 import org.scribe.model.Verifier;
 import org.scribe.oauth.OAuthService;
 
-import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Get;
-
 @Controller
-public class GoogleAuthController extends BaseController{
-	
-	@Inject @Google private OAuthService service;
-	@Inject private UrlValidator urlValidator;
-	@Inject private LoginMethodManager loginManager;
+public class GoogleAuthController extends BaseController {
 
-	@Get("/sign-up/google/")
-	public void signUpViaGoogle(String state, String code) {
-		Token token = service.getAccessToken(null, new Verifier(code));
-		SocialAPI googleAPI = new GoogleAPI(token, service);
-	    
-		loginManager.merge(MethodType.GOOGLE, googleAPI);
-		
-	    redirectToRightUrl(state);
-	}
-	
-	private void redirectToRightUrl(String state) {
-		boolean valid = urlValidator.isValid(state);
-		if (!valid) {
-			includeAsList("mamuteMessages", i18n("error", "error.invalid.url", state));
-		}
+    @Inject
+    @Google
+    private OAuthService service;
+    @Inject
+    private UrlValidator urlValidator;
+    @Inject
+    private LoginMethodManager loginManager;
+
+    @Get("/sign-up/google/")
+    public void signUpViaGoogle(String state, String code) {
+        Token token = service.getAccessToken(null, new Verifier(code));
+        SocialAPI googleAPI = new GoogleAPI(token, service);
+
+        loginManager.merge(MethodType.GOOGLE, googleAPI);
+
+        redirectToRightUrl(state);
+    }
+
+    private void redirectToRightUrl(String state) {
+        boolean valid = urlValidator.isValid(state);
+        if (!valid) {
+            includeAsList("mamuteMessages", i18n("error", "error.invalid.url", state));
+        }
         if (state != null && !state.isEmpty() && valid) {
             redirectTo(state);
         } else {
             redirectTo(ListController.class).home(null);
         }
-	}
+    }
 }

@@ -5,20 +5,20 @@ import org.mamute.model.UserSession;
 
 public class UserAndSession {
 
-	private final User user;
-	private final UserSession userSession;
+    private final User user;
+    private final UserSession userSession;
 
-	public UserAndSession(User user, UserSession userSession) {
-		this.user = user;
-		this.userSession = userSession;
-	}
+    public UserAndSession(User user, UserSession userSession) {
+        this.user = user;
+        this.userSession = userSession;
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public UserSession getUserSession() {
-		return userSession;
-	}
+    public UserSession getUserSession() {
+        return userSession;
+    }
 
 }

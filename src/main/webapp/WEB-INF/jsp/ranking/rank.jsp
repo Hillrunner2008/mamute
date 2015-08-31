@@ -9,12 +9,12 @@
 <tags:header facebookMetas="${true}" title="${genericTitle} - ${title}" description="${description}"/>
 
 <h2 class="title page-title subheader">
-	${t['users.ranking']}
+    ${t['users.ranking']}
 </h2>
 
 <ul class="ranking">
-<c:forEach items="${topUsers}" var="user">
-	<li class="ranking-item"><tags:RankingUser user="${user}"/></li>
-</c:forEach>
+    <c:forEach items="${topUsers}" var="user">
+        <li class="ranking-item"><tags:RankingUser user="${user}"/></li>
+        </c:forEach>
 </ul>
 <tags:pagination url="${linkTo[RankingController].rank}" currentPage="${currentPage}" totalPages="${pages}" delta="2"/>

@@ -1,51 +1,54 @@
 package org.mamute.model.ban;
 
+import javax.persistence.Cacheable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 import org.mamute.model.User;
 import org.mamute.providers.SessionFactoryCreator;
 
-import javax.persistence.*;
-
 @Cacheable
 @Entity
 public class BlockedIp {
 
-	@Id
-	@GeneratedValue
-	private Long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	private String ip;
+    private String ip;
 
-	@Type(type = SessionFactoryCreator.JODA_TIME_TYPE)
-	private final DateTime createdAt = new DateTime();
+    @Type(type = SessionFactoryCreator.JODA_TIME_TYPE)
+    private final DateTime createdAt = new DateTime();
 
-	@ManyToOne
-	private User author;
+    @ManyToOne
+    private User author;
 
-	/**
-	 * @deprecated hibernate only
-	 */
-	BlockedIp() {
-	}
+    /**
+     * @deprecated hibernate only
+     */
+    BlockedIp() {
+    }
 
-	public BlockedIp(String ip) {
-		this.ip = ip;
-	}
+    public BlockedIp(String ip) {
+        this.ip = ip;
+    }
 
-	public String getIp() {
-		return ip;
-	}
+    public String getIp() {
+        return ip;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setAuthor(User author) {
-		this.author = author;
-	}
+    public void setAuthor(User author) {
+        this.author = author;
+    }
 
-	public User getAuthor() {
-		return author;
-	}
+    public User getAuthor() {
+        return author;
+    }
 }

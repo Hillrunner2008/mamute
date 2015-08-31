@@ -6,8 +6,9 @@ import br.com.caelum.vraptor.routes.annotation.Routed;
 
 @Routed
 @Controller
-public class NavigationController extends BaseController{
+public class NavigationController extends BaseController {
 
-	@Get
-	public void about() {}
+    @Get
+    public void about() {
+    }
 }

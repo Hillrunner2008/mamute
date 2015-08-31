@@ -5,6 +5,6 @@ import org.mamute.model.VoteType;
 
 public interface VotableRule {
 
-	EventType eventType(VoteType type);
+    EventType eventType(VoteType type);
 
 }

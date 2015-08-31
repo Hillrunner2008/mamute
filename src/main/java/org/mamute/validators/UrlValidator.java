@@ -1,29 +1,26 @@
 package org.mamute.validators;
 
-import javax.inject.Inject;
-
 import br.com.caelum.vraptor.environment.Environment;
+import javax.inject.Inject;
 
 public class UrlValidator {
 
-	private String siteUrl;
-	
-	@Deprecated
-	public UrlValidator() {
-	}
+    private String siteUrl;
 
-	@Inject
-	public UrlValidator(Environment env) {
-		this.siteUrl = env.get("host");
-	}
+    @Deprecated
+    public UrlValidator() {
+    }
 
-	public boolean isValid(String url) {
-		if (url != null && !url.startsWith(siteUrl)) {
-			return false;
-		}
-		return true;
-	}
-	
-	
-	
+    @Inject
+    public UrlValidator(Environment env) {
+        this.siteUrl = env.get("host");
+    }
+
+    public boolean isValid(String url) {
+        if (url != null && !url.startsWith(siteUrl)) {
+            return false;
+        }
+        return true;
+    }
+
 }

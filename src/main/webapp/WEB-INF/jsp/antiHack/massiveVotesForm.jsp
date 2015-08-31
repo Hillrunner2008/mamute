@@ -9,20 +9,20 @@
 <tags:header facebookMetas="${true}" title="${genericTitle} - ${title}" description="${description}"/>
 
 <h2 class="title page-title subheader">
-	${t['antihack.show_votes']}
+    ${t['antihack.show_votes']}
 </h2>
 
 <form action="${linkTo[AntiHackController].showSuspects}" method="post">
-	<label>In�cio</label>
-	<input type="text" class="date datepicker text-input" name="begin">
-	<label>Fim</label>
-	<input type="text" class="date datepicker text-input" name="end">
-	
-	<label>Tipo de voto</label>
-	<select name="voteType">
-		<option value="UP">${t['suspects.upvote']}</option>
-		<option value="DOWN">${t['suspects.downvote']}</option>
-	</select>
-	
-	<input type="submit" value="${t['antihack.show_votes']}"/>
+    <label>In�cio</label>
+    <input type="text" class="date datepicker text-input" name="begin">
+    <label>Fim</label>
+    <input type="text" class="date datepicker text-input" name="end">
+
+    <label>Tipo de voto</label>
+    <select name="voteType">
+        <option value="UP">${t['suspects.upvote']}</option>
+        <option value="DOWN">${t['suspects.downvote']}</option>
+    </select>
+
+    <input type="submit" value="${t['antihack.show_votes']}"/>
 </form>

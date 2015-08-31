@@ -8,7 +8,6 @@ import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.interceptor.Interceptor;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -16,33 +15,31 @@ import org.hibernate.SessionFactory;
 @Priority(Interceptor.Priority.APPLICATION)
 public class SessionProvider {
 
-	private SessionFactory factory;
+    private SessionFactory factory;
     private Session session;
 
     @Deprecated
     public SessionProvider() {
-	}
-	
-    @Inject
-	public SessionProvider(SessionFactory factory) {
-		this.factory = factory;
-	}
-	
-	@PostConstruct
-	public void create() {
-	    session = this.factory.openSession();
-	}
+    }
 
-	@Produces
-	@RequestScoped
-	public Session getInstance() {
-		return session; 
-	}
-	
-	public void destroy(@Disposes Session session) {
-	    session.close();
-	}
-	
-	
+    @Inject
+    public SessionProvider(SessionFactory factory) {
+        this.factory = factory;
+    }
+
+    @PostConstruct
+    public void create() {
+        session = this.factory.openSession();
+    }
+
+    @Produces
+    @RequestScoped
+    public Session getInstance() {
+        return session;
+    }
+
+    public void destroy(@Disposes Session session) {
+        session.close();
+    }
 
 }

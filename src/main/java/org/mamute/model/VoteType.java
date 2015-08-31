@@ -1,28 +1,28 @@
 package org.mamute.model;
 
-
 public enum VoteType {
-	UP(1){
-		@Override
-		public String toString() {
-			return "UpVote";
-		}
-	},
-	DOWN(-1) {
-		@Override
-		public String toString() {
-			return "DownVote";
-		}
-	};
 
-	private final int value;
+    UP(1) {
+                @Override
+                public String toString() {
+                    return "UpVote";
+                }
+            },
+    DOWN(-1) {
+                @Override
+                public String toString() {
+                    return "DownVote";
+                }
+            };
 
-	private VoteType(int value) {
-		this.value = value;
-	}
+    private final int value;
 
-	public int getCountValue() {
-		return value;
-	}
+    private VoteType(int value) {
+        this.value = value;
+    }
+
+    public int getCountValue() {
+        return value;
+    }
 
 }

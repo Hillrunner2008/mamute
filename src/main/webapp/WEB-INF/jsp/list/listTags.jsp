@@ -7,10 +7,10 @@
 
 <h2 class="title page-title subheader">${t['menu.tags']}</h2>
 <ol class="tags-list complete-tags">
-	<c:forEach var="tag" items="${tags}">
-		<li class="complete-tag">
-			<tags:tag tag="${tag}"/> x ${tag.usageCount}
-			<div class='tag-description'>${tag.description}</div>
-		</li>
-	</c:forEach>
+    <c:forEach var="tag" items="${tags}">
+        <li class="complete-tag">
+            <tags:tag tag="${tag}"/> x ${tag.usageCount}
+            <div class='tag-description'>${tag.description}</div>
+        </li>
+    </c:forEach>
 </ol>

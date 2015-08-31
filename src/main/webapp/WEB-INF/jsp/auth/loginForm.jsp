@@ -9,10 +9,10 @@
 <h2 class="title page-title subheader">Login</h2>
 
 <div class="login-or-signup">
-	<div class="login">
-		<tags:loginForm redirectUrl="${redirectUrl}"/>
-	</div>
-	<div class="signup">
-		<tags:signupForm/>
-	</div>
+    <div class="login">
+        <tags:loginForm redirectUrl="${redirectUrl}"/>
+    </div>
+    <div class="signup">
+        <tags:signupForm/>
+    </div>
 </div>
